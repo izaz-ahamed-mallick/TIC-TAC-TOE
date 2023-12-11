@@ -1,0 +1,112 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ body{
+  width: 100%;
+  height: 100vh;
+  background-color: #D9AFD9;
+  background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gilroy";
+ }
+ .container{
+  width: 40vw;
+  height: 80vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: column;
+  padding: 3vw;
+  border-radius: 2vw;
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  
+ }
+ main>h1{
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0a3d62;
+ }
+ .game{
+ 
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 7px;
+  margin-top: 1vw;
+
+  
+
+  
+
+ }
+ .game button{
+  width:7vw;
+  height:7vw;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border: none;
+  outline: none;
+  border-radius: 1vw;
+  background-color: #F4EBD9;
+  cursor: pointer;
+  display: flex;
+
+align-items: center;
+justify-content: center;
+font-size: 4.5vw;
+font-weight: 600;
+color: #499EA6;
+}
+ #reset-btn{
+  margin-top: 2vw;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border: none;
+  outline: none;
+  border-radius: 1vw;
+  font-weight: 600;
+  width: 150px;
+  height: 50px;
+  font-size: 2vw;
+  padding: 1vw;
+  background-color: #F4EBD9;
+  cursor: pointer;
+  color: #0a3d62;
+ }
+ .win-msg-container{
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  text-align: center;
+  
+ }
+ .win-msg-container h2{
+  text-align: center;
+  font-weight: 600;
+  color: #0a3d62;
+ font-family: "Gilroy";
+
+
+ }
+ #new-game{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border: none;
+  outline: none;
+  border-radius: 1vw;
+  width: 150px;
+  height: 50px;
+  font-size: 2vw;
+  font-weight: 600;
+  padding: 1vw;
+  background-color: #F4EBD9;
+  cursor: pointer;
+  margin-top: 1vw;
+  color: #0a3d62;
+ }
+ .hide{
+  display: none;
+ }
