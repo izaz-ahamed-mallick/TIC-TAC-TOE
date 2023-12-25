@@ -26,6 +26,7 @@ boxes.forEach((box) => {
       turn = false;
     } else {
       box.innerHTML = "X";
+      box.style.color = '#499EA6'
       turn = true;
     }
     box.disabled = true;
@@ -34,22 +35,61 @@ boxes.forEach((box) => {
 });
 function checkWinner() {
   winPatter.forEach((posNum) => {
+
     let pos1 = boxes[posNum[0]].innerText;
     let pos2 = boxes[posNum[1]].innerText;
     let pos3 = boxes[posNum[2]].innerText;
+    
     if (pos1 != "" && pos2 != "" && pos3 != "") {
       if (pos1 === pos2 && pos2 === pos3) {
+        console.log(pos1,pos2,pos3);
         winNamePrint(pos1);
         disabledBox();
+        resetDraw()
+      
       }
+      
     }
   });
 }
 
 function winNamePrint(winName) {
+  resetBtn.style.display = "none"
   showMsg.innerText = `Congralutaion ${winName} Win The Game`;
   mesgContainer.classList.toggle("hide");
+
+ 
+
 }
+let count=0
+function drawGame(){
+  
+ boxes.forEach((box)=>{
+    box.addEventListener("click",()=>{
+     
+        count++;
+       if(count === 9){
+        showMsg.innerText = `Draw! Start a New Game`;
+        mesgContainer.classList.toggle("hide");
+        
+       }
+       else if(count === 10){
+        count=0
+       }
+       console.log(count);
+
+    })
+   
+ })
+
+   
+  }
+  
+  drawGame()
+  function resetDraw(){
+    
+    count = 0
+  }
 
 function disabledBox() {
   for (let box of boxes) {
@@ -59,38 +99,27 @@ function disabledBox() {
 function enableBox() {
   for (let box of boxes) {
     box.disabled = false;
-    box.innerText = ''
+    box.innerText = '';
   }
 }
 
 newGame.addEventListener("click", () => {
+  resetBtn.style.display = "block"
+  resetDraw()
   turn = true;
   enableBox();
+ 
   mesgContainer.classList.toggle("hide");
 });
 
 resetBtn.addEventListener("click",()=>{
+  resetDraw()
   turn = true;
   enableBox();
-  mesgContainer.classList.toggle("hide");
+  // mesgContainer.classList.toggle("hide");
 
 });
 
-function drawGame(){
-  let count=0
- boxes.forEach((box)=>{
-    box.addEventListener("click",()=>{
-        count++;
-       if(count === 9){
-        showMsg.innerText = `Draw! Start a New Game`;
-        mesgContainer.classList.toggle("hide");
-       }
-    })
- })
- console.log(count);
-   
-  }
-  
 
-drawGame()
+
 
